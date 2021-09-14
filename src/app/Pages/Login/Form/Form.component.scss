@@ -1,0 +1,95 @@
+@import '../../../../config-scss/rem-calc.scss';
+:host
+{
+
+    .formMain{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      flex-direction: column;
+      padding: rem-calc(10);
+      background: var(--secondBlack);
+      max-width: rem-calc(400);
+      height: rem-calc(500);
+
+      border-radius: 10px;
+      margin: rem-calc(10) rem-calc(10);
+      margin-top: rem-calc(90);
+
+      .logo{
+        display: flex;
+        margin-top: rem-calc(-15);
+        margin-left: rem-calc(-10);
+        margin-bottom: rem-calc(40);
+        max-width: rem-calc(350);
+        height: rem-calc(80)
+      }
+
+      .loginForm{
+        display: flex;
+        flex-direction: column;
+        margin: rem-calc(5) auto;
+        justify-content: center;
+
+        max-width: rem-calc(300);
+
+      }
+      .formPlaceEmail{
+        display: flex;
+        margin: rem-calc(5) auto;
+        width: rem-calc(300);
+        height: rem-calc(30);
+        padding:  rem-calc(5);
+        border-radius: 5px;
+        background: var(--secondBlack);
+        color: rgba(255,255,255);
+        font-weight: 700;
+        border: solid 1px rgba(255,255,255);
+      }
+      .formPlacePassword{
+        display: flex;
+        margin: rem-calc(5) auto;
+        width: rem-calc(300);
+        height: rem-calc(30);
+        padding:  rem-calc(5);
+        border-radius: 5px;
+        background: var(--secondBlack);
+        color: rgba(255,255,255);
+        font-weight: 700;
+        border: solid 1px rgba(255,255,255);
+      }
+
+      .btnLogin{
+        display: flex;
+        justify-content: center;
+        padding: rem-calc(10);
+        margin-top: rem-calc(150);
+        width: rem-calc(310);
+        height: rem-calc(35);
+        border-radius: 5px;
+        background: var(--lightOrange);
+
+      }
+
+      .link{
+        margin: rem-calc(10);
+        text-align: center;
+        color: royalblue;
+
+      }
+      .link2{
+        text-align: center;
+        color: royalblue;
+      }
+    }
+
+    // @media (max-width: 372px) {
+
+    //   .formPlaceEmail{
+    //     max-width: rem-calc(100);
+    //   }
+
+    // }
+}
+

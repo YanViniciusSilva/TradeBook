@@ -1,6 +1,0 @@
-@function rem-calc($size){
-  //todo pixel é dividido por 16 para conversão de "rem"
-  $value: $size / 16;
-  //template string da própria linguagem SCSS para conversão de valores
-  @return #{$value}rem;
-}
