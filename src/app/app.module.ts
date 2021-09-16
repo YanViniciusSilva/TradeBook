@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import {PagesModule} from './Pages/pages.module';
 import { RoutingModule } from './Pages/routing.module';
 
+
 @NgModule({
   declarations: [
     AppComponent
@@ -15,6 +16,7 @@ import { RoutingModule } from './Pages/routing.module';
     AppRoutingModule,
     PagesModule,
     RoutingModule,
+
 
   ],
   providers: [],

@@ -3,17 +3,21 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home/home/home.component';
 import { FormComponent } from './Login/Form/Form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
 @NgModule({
   declarations: [
     HomeComponent,
-    FormComponent
+    FormComponent,
+
   ],
   imports: [
     CommonModule,
-    RoutingModule
+    RoutingModule,
+    ReactiveFormsModule
+
   ]
 })
 export class PagesModule { }
