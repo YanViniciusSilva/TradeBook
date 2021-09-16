@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { FormComponent } from './Pages/Login/Form/Form.component';
+
+import { FormComponent } from './shared/login/Form.component';
+import { CreateSubscriberFormComponent } from './shared/createSubscriberForm/createSubscriberForm.component';
 
 const routes: Routes = [
 {
@@ -8,8 +10,12 @@ const routes: Routes = [
   loadChildren: () => import('./Pages/pages.module').then(p => p.PagesModule)
 },
 {
-  path: '',
+  path: 'LoginForm',
   component: FormComponent
+},
+{
+  path:'crateSubscriberForm',
+  component: CreateSubscriberFormComponent
 }
 
 

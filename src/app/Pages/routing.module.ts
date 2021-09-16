@@ -1,18 +1,26 @@
 import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CreateSubscriberFormComponent } from '../shared/createSubscriberForm/createSubscriberForm.component';
+
 import { HomeComponent } from './home/home/home.component';
-import { FormComponent } from './Login/Form/Form.component';
+import { FormComponent } from 'src/app/shared/login/Form.component';
 
 
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent
+    component: FormComponent
+  },
+  {
+    path:'',
+    component: CreateSubscriberFormComponent
   },
   {
     path: '',
-    component: FormComponent
-  }
+    component: HomeComponent
+  },
+
+
 ];
 
 @NgModule({

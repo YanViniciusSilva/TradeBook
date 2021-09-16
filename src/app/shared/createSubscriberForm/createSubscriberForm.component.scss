@@ -1,0 +1,143 @@
+@import '../../../config-scss/rem-calc.scss';
+
+:host
+{
+  padding: rem-calc(10);
+
+    .CreateFormMain{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      margin: auto auto;
+      margin-top: 2vh;
+
+
+      //margin: 8% 25% 8% 25% ;
+      //transform: translateX(100%) translateY(20%) ;
+
+      padding: rem-calc(20);
+      max-width: rem-calc(1100);
+      min-width: rem-calc(215);
+      height: rem-calc(600);
+
+      background: var(--secondBlack);
+      box-shadow: 15px 15px 5px black;
+      border-radius: 2px;
+
+
+      .logo{
+        display: flex;
+        max-width: rem-calc(300);
+        height: rem-calc(70);
+        margin-top: rem-calc(-15);
+        margin-bottom: rem-calc(15);
+      }
+
+      .createLoginForm{
+        display: relative;
+        margin-top: 0vh;
+        flex-wrap: wrap;
+        //flex-direction:row;
+
+
+        max-width: rem-calc(1000);
+        //align-items: center;
+
+        .titulos{
+          color: rgba(255,255,255);
+          font-weight: 600;
+          font-size: rem-calc(20);
+        }
+
+        .div1{
+          display: inline-flex;
+          flex-direction: column;
+          flex-wrap: wrap;
+          width: rem-calc(300);
+          padding: rem-calc(5);
+          margin: rem-calc(10);
+
+          //align-items: center;
+
+        }
+        .div2{
+          display: inline-flex;
+          flex-direction: column;
+          flex-wrap: wrap;
+          width: rem-calc(300);
+          padding: rem-calc(5);
+          margin: rem-calc(10);
+
+          //align-items: center;
+
+        }
+        .div3{
+          display: inline-flex;
+          flex-direction: column;
+          flex-wrap: wrap;
+          width: rem-calc(300);
+          padding: rem-calc(5);
+          margin: rem-calc(10);
+
+          //align-items: center;
+
+        }
+
+        .FormPlace{
+          display: inline-flex;
+          width: 95%;
+          height: rem-calc(30);
+
+          margin: rem-calc(10) auto;
+          padding:  rem-calc(5);
+
+          border-radius: 5px;
+          background: var(--secondBlack);
+          color: rgba(255,255,255);
+          font-weight: 500;
+          border: solid 1px rgba(255,255,255);
+
+        }
+
+        .return{
+          display: flex;
+          margin-top: rem-calc(-20);
+          //padding: rem-calc(10);
+          margin-left: 2%;
+          //margin-right: 0;
+          font-weight: 600;
+          color: rgb(65, 105, 225);
+          text-decoration: none;
+        }
+        .return:hover{
+          color: rgb(126, 152, 230);
+        }
+
+        .btnCreateAcount{
+          display: relative;
+          padding: rem-calc(10);
+          width: rem-calc(150);
+          height: rem-calc(35);
+          border-radius: 5px;
+          background: var(--lightOrange);
+          margin-left: 81%;
+          margin-right: 0;
+          font-weight: 700;
+
+        }
+        .btnCreateAcount:hover{
+          background-color: var(--orange);
+        }
+
+        p{
+          color: #fff;
+          font-size: rem-calc(12);
+        }
+      }
+
+
+    }
+
+  }

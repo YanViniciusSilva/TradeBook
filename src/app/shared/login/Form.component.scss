@@ -1,4 +1,4 @@
-@import '../../../../config-scss/rem-calc.scss';
+@import '../../../config-scss/rem-calc.scss';
 
 :host
 {
@@ -94,7 +94,10 @@
         color: rgb(65, 105, 225);
         line-height: rem-calc(30);
         font-weight: 500;
-
+        text-decoration: none;
+      }
+      .link:hover{
+        color: rgb(126, 152, 230);
       }
 
     }
