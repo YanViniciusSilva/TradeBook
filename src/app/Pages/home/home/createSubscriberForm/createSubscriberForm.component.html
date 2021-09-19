@@ -1,0 +1,101 @@
+<section class="CreateFormMain">
+
+  <img class="logo" src="../../../../assets/trocaLivro.png" alt="troca_livro">
+  <section Class="createLoginForm">
+
+    <form class="createLoginForm" novalidate [formGroup]="SubscriberForm">
+
+      <div class="div1">
+        <h2 class="titulos">Dados pessoais</h2>
+        <input
+          class="FormPlace"
+          id="FirstName"
+          type="text"
+          placeholder="Escreva seu nome*"
+          formControlName="FirstName"
+          >
+        <input
+          class="FormPlace"
+          id="LastName"
+          type="text"
+          placeholder="Escreva seu sobrenome*"
+          formControlName="LastName">
+        <input
+          class="FormPlace"
+          id="Birthday"
+          type="date"
+          placeholder="*"
+          formControlName="Birthday">
+        <input
+          class="FormPlace"
+          id="SubscriberNumber"
+          type="tel"
+          placeholder="Telefone*"
+          formControlName="SubscriberNumber">
+      </div>
+
+      <div class="div2">
+        <h2 class="titulos">Email e Senha</h2>
+        <input
+          class="FormPlace"
+          id="SubscriberEmail"
+          type="email"
+          placeholder="Escreva seu email*"
+          formControlName="SubscriberEmail" >
+        <input
+          class="FormPlace"
+          id="SubscriberPassword"
+          type="password"
+          placeholder="Escreva sua senha*"
+          formControlName="SubscriberPassword">
+        <!-- <input class="FormPlace" id="ConfSubscriberPassword" type="password" placeholder="Confirme sua senha*" formControlName="SubscriberPassword"> -->
+      </div>
+
+      <div class="div3">
+        <h2 class="titulos">Endereço</h2>
+        <input
+          class="FormPlace"
+          id="SubscriberCep"
+          type="text"
+          placeholder="Cep*"
+          formControlName="SubscriberCep">
+        <input
+          class="FormPlace"
+          id="SubscriberStreet"
+          type="text"
+          placeholder="Rua*"
+          formControlName="SubscriberStreet">
+        <input
+          class="FormPlace"
+          id="SubscriberStreetNumber"
+          type="text" placeholder="Nº*"
+          formControlName="SubscriberStreetNumber">
+        <input
+          class="FormPlace"
+          id="SubscriberDistrict"
+          type="text"
+          placeholder="Bairro*"
+          formControlName="SubscriberDistrict">
+        <input
+          class="FormPlace"
+          id="SubscriberCity"
+          type="text"
+          placeholder="Cidade*"
+          formControlName="SubscriberCity">
+        <input
+          class="FormPlace"
+          id="Complement"
+          type="text"
+          placeholder="Complemento"
+          formControlName="Complement" >
+      </div>
+
+
+      <p>Todos os campos com * são obrigatórios</p>
+      <button class="btnCreateAcount" type="submit" (click)= onSubmit() >Criar conta ></button>
+      <a class="return" href="http://localhost:4200" >  Voltar </a>
+
+    </form>
+  </section>
+
+</section>

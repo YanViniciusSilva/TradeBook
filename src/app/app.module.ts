@@ -1,11 +1,12 @@
 import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
-import {PagesModule} from './Pages/pages.module';
 import { RoutingModule } from './Pages/routing.module';
-
+import { FormsModule } from '@angular/forms';
+import { PagesModule } from './Pages/pages.module';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,8 @@ import { RoutingModule } from './Pages/routing.module';
     AppRoutingModule,
     PagesModule,
     RoutingModule,
+    HttpClientModule,
+    FormsModule
 
 
   ],

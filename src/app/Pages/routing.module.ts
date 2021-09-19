@@ -1,9 +1,10 @@
-import { NgModule, Component } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CreateSubscriberFormComponent } from '../shared/createSubscriberForm/createSubscriberForm.component';
 
+import { FormComponent } from 'src/app/Pages/home/home/login/Form.component';
+import { CreateSubscriberFormComponent } from './home/home/createSubscriberForm/createSubscriberForm.component';
 import { HomeComponent } from './home/home/home.component';
-import { FormComponent } from 'src/app/shared/login/Form.component';
+
 
 
 const routes: Routes = [
@@ -12,11 +13,11 @@ const routes: Routes = [
     component: FormComponent
   },
   {
-    path:'',
+    path:'register',
     component: CreateSubscriberFormComponent
   },
   {
-    path: '',
+    path: 'home',
     component: HomeComponent
   },
 

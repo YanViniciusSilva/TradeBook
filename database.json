@@ -1,0 +1,19 @@
+{
+  "Subscribers": [
+    {
+      "Id": 1,
+      "FirstName": "Yan",
+      "Lastname": "Vinicius",
+      "Birthday": "2003-09-23",
+      "SubscriberNumber": "70",
+      "SubscriberEmail": "yanviniciusjesussilva@gmail.com",
+      "SubscriberPassword": "yanvinicius",
+      "SubscriberCep": "09272000",
+      "SubscriberStreet": "Rua Paraíso do Sol",
+      "SubscriberStreetNumber": 70,
+      "SubscriberDistrict": "Tamanduateí 8",
+      "SubscriberCity": "Santo André",
+      "Complement": "Próximo a padaria"
+    }
+  ]
+}
