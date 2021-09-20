@@ -3,8 +3,7 @@
   <img class="logo" src="../../../../assets/trocaLivro.png" alt="troca_livro">
   <section Class="createLoginForm">
 
-    <form class="createLoginForm" novalidate [formGroup]="SubscriberForm">
-
+    <form class="LoginForm" novalidate [formGroup]="SubscriberForm">
       <div class="div1">
         <h2 class="titulos">Dados pessoais</h2>
         <input
@@ -13,25 +12,30 @@
           type="text"
           placeholder="Escreva seu nome*"
           formControlName="FirstName"
+          ng-reflect-required
           >
         <input
           class="FormPlace"
           id="LastName"
           type="text"
           placeholder="Escreva seu sobrenome*"
-          formControlName="LastName">
+          formControlName="LastName"
+          required
+          >
         <input
           class="FormPlace"
           id="Birthday"
           type="date"
           placeholder="*"
-          formControlName="Birthday">
+          formControlName="Birthday"
+          required>
         <input
           class="FormPlace"
           id="SubscriberNumber"
           type="tel"
           placeholder="Telefone*"
-          formControlName="SubscriberNumber">
+          formControlName="SubscriberNumber"
+          required>
       </div>
 
       <div class="div2">
@@ -41,14 +45,15 @@
           id="SubscriberEmail"
           type="email"
           placeholder="Escreva seu email*"
-          formControlName="SubscriberEmail" >
+          formControlName="SubscriberEmail"
+          required email>
         <input
           class="FormPlace"
           id="SubscriberPassword"
           type="password"
           placeholder="Escreva sua senha*"
-          formControlName="SubscriberPassword">
-        <!-- <input class="FormPlace" id="ConfSubscriberPassword" type="password" placeholder="Confirme sua senha*" formControlName="SubscriberPassword"> -->
+          formControlName="SubscriberPassword"
+          required>
       </div>
 
       <div class="div3">
@@ -58,24 +63,28 @@
           id="SubscriberCep"
           type="text"
           placeholder="Cep*"
-          formControlName="SubscriberCep">
+          formControlName="SubscriberCep"
+          required>
         <input
           class="FormPlace"
           id="SubscriberStreet"
           type="text"
           placeholder="Rua*"
-          formControlName="SubscriberStreet">
+          formControlName="SubscriberStreet"
+          required>
         <input
           class="FormPlace"
           id="SubscriberStreetNumber"
           type="text" placeholder="Nº*"
-          formControlName="SubscriberStreetNumber">
+          formControlName="SubscriberStreetNumber"
+          required>
         <input
           class="FormPlace"
           id="SubscriberDistrict"
           type="text"
           placeholder="Bairro*"
           formControlName="SubscriberDistrict">
+
         <input
           class="FormPlace"
           id="SubscriberCity"
@@ -90,10 +99,14 @@
           formControlName="Complement" >
       </div>
 
-
+      <div class="footerForm">
       <p>Todos os campos com * são obrigatórios</p>
       <button class="btnCreateAcount" type="submit" (click)= onSubmit() >Criar conta ></button>
       <a class="return" href="http://localhost:4200" >  Voltar </a>
+      </div>
+      <div>
+        <img src="../../../../../assets/success.png" class="success"  style="display: none;">
+      </div>
 
     </form>
   </section>
