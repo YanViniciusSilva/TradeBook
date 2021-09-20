@@ -1,12 +1,14 @@
-import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 import { AppRoutingModule } from './app-routing.module';
-import { RoutingModule } from './Pages/routing.module';
-import { FormsModule } from '@angular/forms';
+import { AppComponent } from './app.component';
 import { PagesModule } from './Pages/pages.module';
+import { RoutingModule } from './Pages/routing.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { PagesModule } from './Pages/pages.module';
     PagesModule,
     RoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ModalModule.forRoot(),
+    SharedModule
 
 
   ],

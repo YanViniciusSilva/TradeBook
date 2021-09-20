@@ -12,6 +12,7 @@
       align-items: center;
       text-align: center;
       margin: auto auto auto auto;
+      margin-top: 4vh;
 
 
       //transform: translateX(100%) translateY(20%) ;
@@ -134,7 +135,24 @@
           color: #fff;
           font-size: rem-calc(12);
         }
+
       }
+      .success{
+        display: block;
+        max-width: rem-calc(340);
+        margin: rem-calc(50) ;
+
+      }
+      .homeLink{
+        text-decoration: none;
+        font-weight: 600;
+        color: rgb(65, 105, 225);
+
+      }
+      .homeLink:hover{
+        color: rgb(126, 152, 230);
+      }
+
 
 
     }
@@ -243,6 +261,7 @@
           flex-direction: column;
           align-items: center;
 
+
           .return{
             display: flex;
             margin-top: rem-calc(-20);
@@ -283,9 +302,40 @@
           }
        }
       }
+      .homeLink{
+        text-decoration: none;
+        font-weight: 600;
+        color: rgb(65, 105, 225);
 
+      }
+      .homeLink:hover{
+        color: rgb(126, 152, 230);
+      }
 
     }
 
+    .divSubmitted{
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      padding: rem-calc(25);
+
+
+    .success{
+      max-width: rem-calc(340);
+
+    }
+    .homeLink{
+      text-decoration: none;
+      font-weight: 600;
+      color: rgb(65, 105, 225);
+
+    }
+    .homeLink:hover{
+      color: rgb(126, 152, 230);
+    }
+   }
   }
+
+
 }

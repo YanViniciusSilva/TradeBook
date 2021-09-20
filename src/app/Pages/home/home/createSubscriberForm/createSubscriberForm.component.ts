@@ -1,4 +1,4 @@
-import { Component, OnInit, Injectable, Output, RendererStyleFlags2 } from '@angular/core';
+import { Component, OnInit, Injectable} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { SubscribersService } from '../../../../service/subscribers.service';
@@ -17,10 +17,11 @@ export class CreateSubscriberFormComponent implements OnInit {
 
   public SubscriberForm!: FormGroup;
   Submitted = false;
+  public FormData = this.SubscriberForm;
 
   constructor(
     private SubscribersService : SubscribersService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
   ) { }
 
   ngOnInit() {
@@ -54,18 +55,25 @@ export class CreateSubscriberFormComponent implements OnInit {
       return this.SubscriberForm.get(field)?.errors;
     }
 
-    onSubmit() {
-      this.Submitted = true;
+    onSubmit(){
+
       console.log(this.SubscriberForm.value);
-      if (this.SubscriberForm.valid){
-        console.log('submit');
+      if(this.SubscriberForm.valid){
+        this.Submitted = true;
         this.SubscribersService.create(this.SubscriberForm.value).subscribe(
-          error => console.log(error),
-          success => console.log('success'),
-        );
+        error => console.log(error),
+        success => console.log('success'),
+      );
+      }else{
+        this.Submitted = false;
+        console.log('Casa caiu papai');
       }
 
+
+
     }
+
+
 
 
 

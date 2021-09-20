@@ -3,7 +3,12 @@
   <img class="logo" src="../../../../assets/trocaLivro.png" alt="troca_livro">
   <section Class="createLoginForm">
 
-    <form class="LoginForm" novalidate [formGroup]="SubscriberForm">
+    <div *ngIf="Submitted" class="divSubmitted">
+      <img src="../../../assets/success.png" alt="Usuário cadastrado com sucesso" class="success">
+      <a href="" class="homeLink"> Ir para página inicial </a>
+    </div>
+
+    <form class="LoginForm" novalidate [formGroup]="SubscriberForm" *ngIf="!Submitted">
       <div class="div1">
         <h2 class="titulos">Dados pessoais</h2>
         <input
@@ -12,7 +17,7 @@
           type="text"
           placeholder="Escreva seu nome*"
           formControlName="FirstName"
-          ng-reflect-required
+          required
           >
         <input
           class="FormPlace"
@@ -104,9 +109,8 @@
       <button class="btnCreateAcount" type="submit" (click)= onSubmit() >Criar conta ></button>
       <a class="return" href="http://localhost:4200" >  Voltar </a>
       </div>
-      <div>
-        <img src="../../../../../assets/success.png" class="success"  style="display: none;">
-      </div>
+
+
 
     </form>
   </section>
