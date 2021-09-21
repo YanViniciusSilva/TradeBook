@@ -1,5 +1,6 @@
-@import '../../../../../config-scss/rem-calc.scss';
-@import '../../../../../config-scss/reset.scss';
+@import '../../../../config-scss/rem-calc.scss';
+@import '../../../../config-scss/reset.scss';
+
 
 :host
 {
@@ -20,7 +21,7 @@
       padding: rem-calc(30);
       max-width: 85%;
       min-width: rem-calc(215);
-      height: 100%;
+      height: rem-calc(550%);
 
       background: var(--secondBlack);
       box-shadow: 15px 15px 5px black;
@@ -140,10 +141,13 @@
       .success{
         display: block;
         max-width: rem-calc(340);
-        margin: rem-calc(50) ;
+        margin: rem-calc(20) ;
 
       }
       .homeLink{
+        display: flex;
+        flex-direction: column;
+        margin-top: rem-calc(100);
         text-decoration: none;
         font-weight: 600;
         color: rgb(65, 105, 225);
@@ -153,6 +157,16 @@
         color: rgb(126, 152, 230);
       }
 
+      .divError{
+        display: relative ;
+        margin: auto auto;
+        max-width: rem-calc(600);
+        padding: rem-calc(6);
+        background: rgb(255, 141, 141);
+        color: rgb(221, 0, 0);
+        border: solid 1px rgb(221, 0, 0);
+        border-radius: rem-calc(5);
+      }
 
 
     }
@@ -326,6 +340,7 @@
 
     }
     .homeLink{
+      margin-top: rem-calc(70);
       text-decoration: none;
       font-weight: 600;
       color: rgb(65, 105, 225);

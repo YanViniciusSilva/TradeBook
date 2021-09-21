@@ -1,0 +1,15 @@
+@import '../../../../config-scss/rem-calc.scss';
+@import '../../../../config-scss/reset.scss';
+@import '../../../../config-scss/variables.scss';
+
+:host{
+
+  .userProfile{
+    display: flex;
+    margin: rem-calc(20);
+    padding: rem-calc(20);
+    height: rem-calc(180);
+    background: var(--secondBlack);
+    color: rgba(255, 255, 255);
+  }
+}

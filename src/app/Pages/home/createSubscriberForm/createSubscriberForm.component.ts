@@ -1,7 +1,7 @@
 import { Component, OnInit, Injectable} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-import { SubscribersService } from '../../../../service/subscribers.service';
+import { SubscribersService } from 'src/app/service/subscribers.service';
 
 
 @Injectable ({
@@ -17,6 +17,7 @@ export class CreateSubscriberFormComponent implements OnInit {
 
   public SubscriberForm!: FormGroup;
   Submitted = false;
+  errorSubmit = false;
   public FormData = this.SubscriberForm;
 
   constructor(
@@ -59,6 +60,7 @@ export class CreateSubscriberFormComponent implements OnInit {
 
       console.log(this.SubscriberForm.value);
       if(this.SubscriberForm.valid){
+        this.errorSubmit = false;
         this.Submitted = true;
         this.SubscribersService.create(this.SubscriberForm.value).subscribe(
         error => console.log(error),
@@ -66,6 +68,7 @@ export class CreateSubscriberFormComponent implements OnInit {
       );
       }else{
         this.Submitted = false;
+        this.errorSubmit = true;
         console.log('Casa caiu papai');
       }
 

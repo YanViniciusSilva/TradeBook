@@ -8,6 +8,10 @@
       <a href="" class="homeLink"> Ir para página inicial </a>
     </div>
 
+    <div *ngIf="errorSubmit" class="divError">
+      <p>Dados imcompletos ou incorretos. Por favor verifique os dados e tente novamente.</p>
+    </div>
+
     <form class="LoginForm" novalidate [formGroup]="SubscriberForm" *ngIf="!Submitted">
       <div class="div1">
         <h2 class="titulos">Dados pessoais</h2>

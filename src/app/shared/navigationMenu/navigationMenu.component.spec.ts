@@ -3,21 +3,21 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { AlertModalComponent } from './alertModal.component';
+import { NavigationMenuComponent } from './navigationMenu.component';
 
-describe('AlertModalComponent', () => {
-  let component: AlertModalComponent;
-  let fixture: ComponentFixture<AlertModalComponent>;
+describe('NavigationMenuComponent', () => {
+  let component: NavigationMenuComponent;
+  let fixture: ComponentFixture<NavigationMenuComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AlertModalComponent ]
+      declarations: [ NavigationMenuComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AlertModalComponent);
+    fixture = TestBed.createComponent(NavigationMenuComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

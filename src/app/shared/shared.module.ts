@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
-import { AlertModalComponent } from './alertModal/alertModal.component';
 
 
 
@@ -9,8 +8,7 @@ import { AlertModalComponent } from './alertModal/alertModal.component';
   imports: [
     CommonModule
   ],
-  declarations: [AlertModalComponent],
-  exports: [AlertModalComponent],
-  entryComponents: [AlertModalComponent]
+  declarations: [],
+
 })
 export class SharedModule { }

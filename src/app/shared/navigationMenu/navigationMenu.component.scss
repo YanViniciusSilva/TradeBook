@@ -1,0 +1,29 @@
+@import '../../../config-scss/rem-calc.scss';
+@import '../../../config-scss/reset.scss';
+@import '../../../config-scss/variables.scss';
+
+:host{
+
+  .menu{
+    display: flex;
+    background: var(--lightOrange);
+    flex-direction: row;
+    height: rem-calc(50) ;
+    align-items: center;
+    justify-content: center;
+
+
+    .icon{
+      display: relative;
+      margin:  auto rem-calc(32);
+      width: rem-calc(30);
+
+    }
+    .icon:hover{
+      background: var(--orange);
+      background-size: rem-calc(100);
+    }
+  }
+
+
+}
