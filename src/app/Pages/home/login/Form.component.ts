@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, NgModel, Validators } from '@angular/forms';
 
-//import { FormGroup, FormControl } from '@angular/forms';
+import { SubscribersService } from 'src/app/service/subscribers.service';
+
 
 @Component({
   selector: 'Form',
@@ -9,17 +11,45 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormComponent implements OnInit {
 
+  ServerUrl = 'http://localhost:3001/Subscribers';
+  submitted = false;
+  public login !: FormGroup;
+  public loginData = this.login;
 
 
-  //public login: FormGroup | undefined;
-
-  constructor() { }
+  constructor(
+    private SubscribersService : SubscribersService,
+    private fb: FormBuilder,
+    ) { }
 
   ngOnInit() {
-    // this.login = new FormGroup({
-    //   Email: new FormControl(null),
-    //   Password: new FormControl(null)
-    // })
+
+    this.SubscribersService.getSubscribers().subscribe(
+      (Dados) => {
+      console.log(Dados);
+      },
+      (error) => {
+      console.log(error);
+    }
+    )
+
+    this.login = this.fb.group({
+      SubscriberEmail: [null,[Validators.required, Validators.email, Validators.maxLength(255)]],
+      SubscriberPassword: [null,[Validators.required, Validators.maxLength(255)]]
+    });
+  }
+
+  verify(){
+    console.log("verify...")
+    console.log(this.login.value);
+    if (this.login.value == this.SubscribersService.getSubscribers){
+    this.submitted = true;
+    console.log('success');
+    console.log(this.loginData);
+    }else{
+    console.log("deu ruim");
+    this.submitted = false;
+    }
   }
 
 }

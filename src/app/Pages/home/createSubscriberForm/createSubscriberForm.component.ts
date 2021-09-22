@@ -69,7 +69,7 @@ export class CreateSubscriberFormComponent implements OnInit {
       }else{
         this.Submitted = false;
         this.errorSubmit = true;
-        console.log('Casa caiu papai');
+        console.log('Algo não deu certo :(');
       }
 
 

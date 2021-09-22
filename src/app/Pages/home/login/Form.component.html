@@ -1,16 +1,28 @@
 
-<section class="formMain">
+<section class="formMain ">
 
   <img class="logo" src="../../../../assets/trocaLivro.png" alt="troca_livro">
   <section Class="loginForm">
-    <form action="/login" method="POST">
+        <form class="login" novalidate [formGroup]="login" *ngIf="!submitted">
 
-      <input class="formPlaceEmail" name="SubscriberEmail" type="email" placeholder="Type your email" required email>
-      <input class="formPlacePassword" name="SubscriberPassword" type="password" placeholder="Type your password" required><br>
+      <input
+        class="formPlaceEmail"
+        name="SubscriberEmail"
+        type="email"
+        placeholder="Type your email"
+        formControlName="SubscriberEmail"
+        required email>
+      <input
+        class="formPlacePassword"
+        name="SubscriberPassword"
+        type="password"
+        placeholder="Type your password"
+        formControlName="SubscriberPassword"
+        required><br>
 
       <a href="" class="link" >Esqueci minha senha</a><br>
       <a href="register" class="link" >É novo por aqui? cadastre-se!</a><br>
-      <button class="btnLogin" type="submit">login</button>
+      <button class="btnLogin" type="submit" (click)="verify()">login</button>
 
 
     </form>

@@ -1,10 +1,11 @@
 @import '../../../../config-scss/rem-calc.scss';
 @import '../../../../config-scss/reset.scss';
+@import '../../../../config-scss/animation.scss';
 
 
 :host
 {
-  padding: rem-calc(10);
+
 
     .CreateFormMain{
       display: flex;
@@ -12,7 +13,7 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-      margin: auto auto auto auto;
+      margin: auto auto;
       margin-top: 4vh;
 
 

@@ -1,6 +1,8 @@
-<section class="CreateFormMain">
+<section class="CreateFormMain slideInLeft">
 
-  <img class="logo" src="../../../../assets/trocaLivro.png" alt="troca_livro">
+
+  <img class="logo fadeIn" src="../../../../assets/trocaLivro.png" alt="troca_livro">
+
   <section Class="createLoginForm">
 
     <div *ngIf="Submitted" class="divSubmitted">
@@ -8,8 +10,8 @@
       <a href="" class="homeLink"> Ir para página inicial </a>
     </div>
 
-    <div *ngIf="errorSubmit" class="divError">
-      <p>Dados imcompletos ou incorretos. Por favor verifique os dados e tente novamente.</p>
+    <div *ngIf="errorSubmit" class="divError shake">
+      <p>Dados imcompletos ou incorretos. Verifique os dados e tente novamente.</p>
     </div>
 
     <form class="LoginForm" novalidate [formGroup]="SubscriberForm" *ngIf="!Submitted">

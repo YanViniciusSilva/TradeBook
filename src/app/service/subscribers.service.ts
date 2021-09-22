@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { observable } from 'rxjs';
 
 
 @Injectable({
@@ -19,11 +18,12 @@ export class SubscribersService {
     return this.http.get(`${this.ServerUrl}/Subscribers`);
   }
 
-  create(criar: any){
-    return this.http.post(`${this.ServerUrl}/Subscribers`, criar).pipe(
 
-    );
+  create(criar: any){
+    return this.http.post(`${this.ServerUrl}/Subscribers`, criar).pipe( );
   }
+
+
 
 }
 
