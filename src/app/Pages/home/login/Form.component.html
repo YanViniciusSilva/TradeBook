@@ -1,9 +1,12 @@
+<div id="firebaseui-auth-container">
 
-<section class="formMain ">
+<section class="formMain slideInLeft" >
 
   <img class="logo" src="../../../../assets/trocaLivro.png" alt="troca_livro">
   <section Class="loginForm">
-        <form class="login" novalidate [formGroup]="login" *ngIf="!submitted">
+      <form class="login" novalidate [formGroup]="login"  id="login">
+
+      <div class="popUpError shake" *ngIf="popUpError"> Login ou senha incorretos </div>
 
       <input
         class="formPlaceEmail"
@@ -11,6 +14,7 @@
         type="email"
         placeholder="Type your email"
         formControlName="SubscriberEmail"
+        [(ngModel)]="email"
         required email>
       <input
         class="formPlacePassword"
@@ -18,15 +22,15 @@
         type="password"
         placeholder="Type your password"
         formControlName="SubscriberPassword"
+        [(ngModel)]="password"
         required><br>
 
       <a href="" class="link" >Esqueci minha senha</a><br>
       <a href="register" class="link" >É novo por aqui? cadastre-se!</a><br>
       <button class="btnLogin" type="submit" (click)="verify()">login</button>
 
-
     </form>
   </section>
 
 </section>
-
+</div>

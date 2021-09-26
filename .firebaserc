@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "tradebook-67339": {
+      "hosting": {
+        "TradeBook": [
+          "tradebook-67339"
+        ]
+      }
+    }
+  }
+}

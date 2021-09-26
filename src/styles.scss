@@ -1,11 +1,13 @@
 @import './config-scss/rem-calc.scss';
 @import './config-scss/reset.scss';
 @import './config-scss/variables.scss';
-//@import '~bootstrap/dist/css/bootstrap.min.css';
 
 html{
   background: var(--black);
   font-family: 'Roboto', sans-serif;
+  overflow-x:hidden;
+
+
 }
 
 main{

@@ -16,6 +16,7 @@ import { NavigationMenuComponent } from '../shared/navigationMenu/navigationMenu
 
 
 
+
 @NgModule({
   declarations: [
     HomeComponent,
@@ -25,7 +26,9 @@ import { NavigationMenuComponent } from '../shared/navigationMenu/navigationMenu
     FavoritesComponent,
     RecommendedComponent,
     UserProfileComponent,
-    NavigationMenuComponent
+    NavigationMenuComponent,
+
+
   ],
   imports: [
     CommonModule,

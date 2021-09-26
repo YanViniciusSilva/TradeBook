@@ -10,6 +10,7 @@ import { PagesModule } from './Pages/pages.module';
 import { RoutingModule } from './Pages/routing.module';
 import { SharedModule } from './shared/shared.module';
 
+
 @NgModule({
   declarations: [
     AppComponent
@@ -22,7 +23,7 @@ import { SharedModule } from './shared/shared.module';
     HttpClientModule,
     FormsModule,
     ModalModule.forRoot(),
-    SharedModule
+    SharedModule,
 
 
   ],
