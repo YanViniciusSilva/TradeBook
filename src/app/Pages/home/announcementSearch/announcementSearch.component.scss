@@ -5,11 +5,156 @@
 
 :host{
 
+  .title{
+    display: flex;
+    flex-direction: column;
+    margin: rem-calc(10) rem-calc(10);
+    align-items: center;
+    padding: rem-calc(10);
+    font-weight: 500;
+    color: rgba(255, 255, 255);
+    font-size: rem-calc(22);
+    min-width: rem-calc(320);
+  }
 
-  // .footer{
-  //   display: flex;
-  //   position: fixed;
-  //   top: 100%;
-  //   width: 100%;
-  // }
-}
+  .main{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+  }
+
+  .searchHeader{
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    justify-content: center;
+    align-items: center;
+  }
+
+    .searchBar{
+      display:flex;
+      margin: rem-calc(-45) rem-calc(5) 0 rem-calc(-37);
+      padding: rem-calc(10);
+      color: rgba(255,255,255);
+      background: var(--secondBlack);
+      width: 77%;
+      height: rem-calc(45);
+      border-radius: rem-calc(5);
+      font-weight: 500;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+    }
+
+    .searchBar2{
+      display:flex;
+      margin: rem-calc(5) rem-calc(5) 0 rem-calc(0);
+      padding: rem-calc(10);
+      color: rgba(255,255,255);
+      background: var(--secondBlack);
+      width: 80.6%;
+      height: rem-calc(45);
+      border-radius: rem-calc(5);
+      font-weight: 500;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+    }
+
+
+    .btnTrade{
+      display: fixed;
+      margin: rem-calc(0) 0 0 rem-calc(845);
+      padding: rem-calc(5);
+      background: var(--secondBlack);
+      width: rem-calc(45);
+      height: rem-calc(45);
+      border-radius: rem-calc(5);
+    }
+
+
+
+    .divFilters{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .filter{
+      display: flex;
+      margin: rem-calc(5) rem-calc(10) 0 0;
+      width: rem-calc(445);
+      height: rem-calc(35);
+      align-items: center;
+      justify-content: center;
+      background: var(--secondBlack);
+      color: rgba(255, 255, 255);
+      border-radius: rem-calc(5);
+    }
+
+
+    .order{
+      display: flex;
+      margin: rem-calc(5) rem-calc(8) 0 rem-calc(-5);
+      align-items: center;
+      justify-content: center;
+      width: rem-calc(445);
+      height: rem-calc(35);
+      background: var(--secondBlack);
+      color: rgba(255, 255, 255);
+      border-radius: rem-calc(5);
+    }
+
+  .searchList{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 85%;
+  }
+
+
+  .bookContainer{
+    display:flex;
+    flex-direction: row;
+    width: 80%;
+    min-width: rem-calc(320);
+    background: var(--secondBlack);
+    height: rem-calc(150);
+    padding: rem-calc(15);
+    border-radius: rem-calc(5);
+    margin: rem-calc(10);
+
+    .bookImage{
+      display: relative;
+      background-color: var(--grey);
+      width: rem-calc(150);
+      border-radius: rem-calc(5) 0 0 rem-calc(5);
+      height: 120%;
+      margin: rem-calc(-15);
+    }
+
+    .infos{
+      display: relative;
+      margin: rem-calc(20);
+      margin-left: rem-calc(40);
+      color: rgba(255, 255, 255);
+      font-weight: 300;
+
+
+      .userName{
+        font-size: rem-calc(30);
+        margin-bottom: rem-calc(15);
+        font-weight: 400;
+        margin-left: rem-calc(9);
+      }
+
+      .info{
+        margin: rem-calc(10);
+      }
+
+
+    }}}

@@ -5,32 +5,90 @@
 
 :host{
 
-  .menu{
-    display:flex;
-    margin: auto rem-calc(0);
-    position: fixed;
-    flex-direction: column;
-    background: var(--lightOrange);
-
-
-
-    align-items: center;
-    height: 100%;
-
-    justify-content: center;
-    width: rem-calc(50);
-
-    .icon{
-      display: flex;
-      margin:  auto rem-calc(32);
-      width: rem-calc(30);
-
-
-    }
-    .icon:hover{
-      background: var(--orange);
-    }
+  .menuListMobile{
+    display:none;
   }
+  .menuItensMobile{
+    display: none;
+  }
+  .iconMobile{
+    display: none;
+  }
+
+  .menuList{
+    display:flex;
+    position:fixed;
+    margin: rem-calc(-10) rem-calc(10) 0 0 ;
+    align-items: center;
+    justify-content: center;
+    left: 0;
+    flex-direction: column;
+    max-width: rem-calc(110);
+    height: 110%;
+    background: var(--lightOrange);
+    z-index: 10;
+
+
+    }
+
+    .menuItens{
+      display: flex;
+      max-width: rem-calc(32);
+      padding: rem-calc(10);
+      margin-bottom: rem-calc(50);
+      background: var(--lightOrange);
+      border-radius: rem-calc(50);
+
+  }
+  .menuItens:hover{
+    background: var(--orange);
+
+
+
+  }
+
+  .icon{
+    max-width: rem-calc(32);
+  }
+
+@media (max-width: 900px){
+
+  .menuList{
+    display: none;
+
+  }
+
+  .menuListMobile{
+    display: flex;
+    position: fixed;
+    width: 100%;
+    min-width: rem-calc(320);
+    height: rem-calc(55);
+    align-items: center;
+    justify-content: center;
+    background-color: var(--lightOrange);
+    z-index: 10;
+    top: 93%;
+
+
+  }
+  .menuItensMobile{
+    display: inline-block;
+    margin: 0 rem-calc(10);
+    padding: rem-calc(10);
+    background-color: var(--lightOrange);
+    border-radius: rem-calc(50);
+  }
+  .menuItensMobile:hover{
+    background-color: var(--orange);
+
+  }
+  .iconMobile{
+    display: flex;
+    max-width: rem-calc(32);
+  }
+
+}
 
 
 

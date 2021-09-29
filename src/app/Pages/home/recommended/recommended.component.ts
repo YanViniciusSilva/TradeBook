@@ -7,9 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecommendedComponent implements OnInit {
 
+  favoriteOn = false;
+  favoriteOff = true;
   constructor() { }
 
   ngOnInit() {
   }
+
+  favorite(){
+    this.favoriteOff = false;
+    this.favoriteOn = true;
+  }
+
+  noFavorite(){
+    this.favoriteOff = true;
+    this.favoriteOn = false;
+  }
+
 
 }

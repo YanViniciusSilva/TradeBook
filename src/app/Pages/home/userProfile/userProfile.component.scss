@@ -5,13 +5,111 @@
 
 :host{
 
+
+  // .main{
+  //   display: flex;
+  //   flex-direction: column;
+  //   align-items: center;
+  //   justify-content: center;
+  //   width: 80%;
+  // }
   .userProfile{
     display: flex;
-    margin: rem-calc(20);
+
+    margin: rem-calc(10) rem-calc(10) 0 rem-calc(100);
     padding: rem-calc(20);
     height: rem-calc(180);
+    width: 88%;
     background: var(--secondBlack);
     color: rgba(255, 255, 255);
+    border-radius: rem-calc(5);
+    transition: all 1s;
+
   }
 
+  .userProfile:focus {
+    height: 90vh;
+    transition: all 1s;
+  }
+
+
+
+  .userPhoto{
+    display: flex;
+    width: rem-calc(150);
+    height: rem-calc(150) ;
+    background: var(--grey);
+    border-radius: rem-calc(100);
+    margin: rem-calc(15);
+    align-items: center;
+    justify-content: center;
+
+  }
+
+  .userName{
+    font-size: rem-calc(30);
+    margin-top: rem-calc(100) ;
+    pointer-events: none;
+
+  }
+  .camIcon{
+    pointer-events: none;
+  }
+
+  .profileOptions{
+    display: flex;
+    max-width: 91%;
+    flex-direction: column;
+    margin: rem-calc(10) rem-calc(10) 0 rem-calc(100);
+
+  }
+
+  .option{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: rem-calc(15);
+    border-radius: rem-calc(5);
+    color: rgba(255, 255, 255);
+    margin-bottom: rem-calc(20);
+  }
+  .option:hover{
+    background: var(--secondBlack);
+    font-weight: 700;
+
+    .icon{
+      max-width: rem-calc(30);
+      transition: all 0.2s;
+    }
+  }
+
+  .icon{
+    display: flex;
+    max-width: rem-calc(25);
+
+  }
+
+  @media (max-width: 450px) {
+
+
+    .userProfile{
+      align-items: center;
+      justify-content: center;
+      height: rem-calc(150);
+
+    }
+    .userPhoto{
+      max-width: rem-calc(100);
+      max-height: rem-calc(100);
+      border-radius: rem-calc(50);
+    }
+    .camIcon{
+      max-width: rem-calc(40);
+    }
+    .userName{
+      margin-top: 0;
+    }
+
+
+  }
 }

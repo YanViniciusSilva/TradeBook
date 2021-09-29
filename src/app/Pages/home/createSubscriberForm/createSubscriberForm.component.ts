@@ -2,6 +2,8 @@ import { Component, OnInit, Injectable} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { SubscribersService } from 'src/app/service/subscribers.service';
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+
 
 
 @Injectable ({
@@ -19,6 +21,8 @@ export class CreateSubscriberFormComponent implements OnInit {
   Submitted = false;
   errorSubmit = false;
   public FormData = this.SubscriberForm;
+  email !: string;
+  password!: string;
 
   constructor(
     private SubscribersService : SubscribersService,
@@ -57,20 +61,34 @@ export class CreateSubscriberFormComponent implements OnInit {
     }
 
     onSubmit(){
+      const auth = getAuth();
+      createUserWithEmailAndPassword(auth, this.email, this.password)
+        .then((userCredential) => {
+          // Signed in
+          const user = userCredential.user;
+          this.errorSubmit = false;
+          this.Submitted = true;
+          console.log(this.SubscriberForm.value);
+          if(this.SubscriberForm.valid){
+            this.errorSubmit = false;
+            this.Submitted = true;
+            this.SubscribersService.create(this.SubscriberForm.value).subscribe(
+            error => console.log(error),
+            success => console.log('success'),
+            );
 
-      console.log(this.SubscriberForm.value);
-      if(this.SubscriberForm.valid){
-        this.errorSubmit = false;
-        this.Submitted = true;
-        this.SubscribersService.create(this.SubscriberForm.value).subscribe(
-        error => console.log(error),
-        success => console.log('success'),
-      );
-      }else{
-        this.Submitted = false;
-        this.errorSubmit = true;
-        console.log('Algo não deu certo :(');
-      }
+
+          // ...
+        }})
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          this.Submitted = false;
+          this.errorSubmit = true;
+          // ..
+        });
+
+
 
 
 

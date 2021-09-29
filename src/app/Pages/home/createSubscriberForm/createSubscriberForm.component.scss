@@ -1,6 +1,7 @@
 @import '../../../../config-scss/rem-calc.scss';
 @import '../../../../config-scss/reset.scss';
 @import '../../../../config-scss/animation.scss';
+@import '../../../../config-scss/variables.scss';
 
 
 :host
@@ -14,7 +15,7 @@
       align-items: center;
       text-align: center;
       margin: auto auto;
-      margin-top: 4vh;
+      margin-top: 6vh;
 
 
       //transform: translateX(100%) translateY(20%) ;
@@ -172,7 +173,7 @@
 
     }
 
-    @media (max-width: 528px) {
+    @media (max-width: 529px) {
       padding: rem-calc(10);
 
     .CreateFormMain{

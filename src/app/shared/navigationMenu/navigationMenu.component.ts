@@ -9,9 +9,11 @@ export class NavigationMenuComponent implements OnInit {
 
   constructor() { }
 
+
   ngOnInit() {
 
 
   }
+
 
 }
