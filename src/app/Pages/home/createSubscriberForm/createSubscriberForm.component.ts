@@ -1,8 +1,12 @@
-import { Component, OnInit, Injectable} from '@angular/core';
+import { Component, Injectable, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
+import { createUserWithEmailAndPassword, getAuth } from 'firebase/auth';
+import { addDoc, collection, getFirestore } from 'firebase/firestore';
 import { SubscribersService } from 'src/app/service/subscribers.service';
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+
+
+
+
 
 
 
@@ -23,6 +27,17 @@ export class CreateSubscriberFormComponent implements OnInit {
   public FormData = this.SubscriberForm;
   email !: string;
   password!: string;
+  FirstName!: string;
+  LastName!: string;
+  Birthday!: Date;
+  UserPhone!: number;
+  UserCep!: number;
+  UserStreet!: string;
+  UserStreetNumber!: number;
+  UserDistrict!: string;
+  UserCity!: string;
+  UserState!: string;
+  Complement!: string;
 
   constructor(
     private SubscribersService : SubscribersService,
@@ -51,6 +66,7 @@ export class CreateSubscriberFormComponent implements OnInit {
       SubscriberStreetNumber: [null, [ Validators.required, Validators.minLength(1), Validators.maxLength(11) ]],
       SubscriberDistrict: [null, [ Validators.required, Validators.minLength(3), Validators.maxLength(255) ]],
       SubscriberCity: [null, [ Validators.required, Validators.minLength(3), Validators.maxLength(255) ]],
+      UserState: [null, [ Validators.required, Validators.minLength(3), Validators.maxLength(255) ]],
       Complement: [null, [ Validators.minLength(3), Validators.maxLength(255) ]]
     });
 
@@ -60,33 +76,58 @@ export class CreateSubscriberFormComponent implements OnInit {
       return this.SubscriberForm.get(field)?.errors;
     }
 
-    onSubmit(){
+    async onSubmit(){
       const auth = getAuth();
-      createUserWithEmailAndPassword(auth, this.email, this.password)
-        .then((userCredential) => {
-          // Signed in
-          const user = userCredential.user;
-          this.errorSubmit = false;
-          this.Submitted = true;
-          console.log(this.SubscriberForm.value);
-          if(this.SubscriberForm.valid){
-            this.errorSubmit = false;
-            this.Submitted = true;
-            this.SubscribersService.create(this.SubscriberForm.value).subscribe(
-            error => console.log(error),
-            success => console.log('success'),
-            );
+      const db = getFirestore();
+          //Add a second document with a generated ID.
+          try {
+            const docRef = await addDoc(collection(db, "users"), {
+              email: this.email,
+              password : this.password,
+              FirstName: this.FirstName,
+              LastName: this.LastName,
+              Birthday: this.Birthday,
+              UserPhone: this.UserPhone,
+              UserCep: this.UserCep,
+              UserStreet: this.UserStreet,
+              UserStreetNumber: this.UserStreetNumber,
+              UserDistrict: this.UserDistrict,
+              UserCity: this.UserCity,
+              UserState: this.UserState,
+              Complement: this.Complement
+            });
+
+            console.log("Document written with ID: ", docRef.id);
+          } catch (e) {
+            console.error("Error adding document: ", e);
+          }
+
+          createUserWithEmailAndPassword(auth, this.email, this.password)
+            .then(async (userCredential) => {
+              // Signed in
+              const user = userCredential.user;
+              this.errorSubmit = false;
+              this.Submitted = true;
+              console.log(this.SubscriberForm.value);
+              if(this.SubscriberForm.valid){
+                this.errorSubmit = false;
+                this.Submitted = true;
+                this.SubscribersService.create(this.SubscriberForm.value).subscribe(
+                error => console.log(error),
+                success => console.log('success'),
+                );
 
 
-          // ...
-        }})
-        .catch((error) => {
-          const errorCode = error.code;
-          const errorMessage = error.message;
-          this.Submitted = false;
-          this.errorSubmit = true;
-          // ..
-        });
+
+                // ...
+              }})
+              .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                this.Submitted = false;
+                this.errorSubmit = true;
+                // ..
+              });
 
 
 

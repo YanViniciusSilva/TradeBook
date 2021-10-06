@@ -8,6 +8,8 @@ import { RecommendedComponent } from './home/recommended/recommended.component';
 import { UserProfileComponent } from './home/userProfile/userProfile.component';
 import { FavoritesComponent } from './home/favorites/favorites.component';
 import { AnnouncementSearchComponent } from './home/announcementSearch/announcementSearch.component';
+import { MyAnnouncesComponent } from './home/myAnnounces/myAnnounces.component';
+import { CreateAnnouncesComponent } from './home/createAnnounces/createAnnounces.component';
 
 
 
@@ -30,7 +32,15 @@ const routes: Routes = [
   },
   {
     path: 'userProfile',
-    component: UserProfileComponent
+    component: UserProfileComponent,
+  },
+  {
+    path: 'myAnnounces',
+    component: MyAnnouncesComponent
+  },
+  {
+    path: 'createAnnounces',
+    component: CreateAnnouncesComponent
   },
   {
     path: 'favorites',

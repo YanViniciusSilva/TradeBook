@@ -23,7 +23,7 @@ import { SharedModule } from './shared/shared.module';
     HttpClientModule,
     FormsModule,
     ModalModule.forRoot(),
-    SharedModule,
+    SharedModule
 
 
   ],

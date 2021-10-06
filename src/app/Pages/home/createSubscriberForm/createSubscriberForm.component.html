@@ -23,6 +23,7 @@
           type="text"
           placeholder="Escreva seu nome*"
           formControlName="FirstName"
+          [(ngModel)]="FirstName"
           required
           >
         <input
@@ -31,6 +32,7 @@
           type="text"
           placeholder="Escreva seu sobrenome*"
           formControlName="LastName"
+          [(ngModel)]="LastName"
           required
           >
         <input
@@ -39,6 +41,7 @@
           type="date"
           placeholder="*"
           formControlName="Birthday"
+          [(ngModel)]="Birthday"
           required>
         <input
           class="FormPlace"
@@ -46,6 +49,7 @@
           type="tel"
           placeholder="Telefone*"
           formControlName="SubscriberNumber"
+          [(ngModel)]="UserPhone"
           required>
       </div>
 
@@ -77,6 +81,7 @@
           type="text"
           placeholder="Cep*"
           formControlName="SubscriberCep"
+          [(ngModel)]="UserCep"
           required>
         <input
           class="FormPlace"
@@ -84,32 +89,46 @@
           type="text"
           placeholder="Rua*"
           formControlName="SubscriberStreet"
+          [(ngModel)]="UserStreet"
           required>
         <input
           class="FormPlace"
           id="SubscriberStreetNumber"
           type="text" placeholder="Nº*"
           formControlName="SubscriberStreetNumber"
+          [(ngModel)]="UserStreetNumber"
           required>
         <input
           class="FormPlace"
           id="SubscriberDistrict"
           type="text"
           placeholder="Bairro*"
-          formControlName="SubscriberDistrict">
+          formControlName="SubscriberDistrict"
+          [(ngModel)]="UserDistrict">
 
         <input
           class="FormPlace"
           id="SubscriberCity"
           type="text"
           placeholder="Cidade*"
-          formControlName="SubscriberCity">
+          formControlName="SubscriberCity"
+          [(ngModel)]="UserCity">
+
         <input
+          class="FormPlace"
+          id="UserState"
+          type="text"
+          placeholder="Estado*"
+          formControlName="UserState"
+          [(ngModel)]="UserState" >
+
+          <input
           class="FormPlace"
           id="Complement"
           type="text"
           placeholder="Complemento"
-          formControlName="Complement" >
+          formControlName="Complement"
+          [(ngModel)]="Complement" >
       </div>
 
       <div class="footerForm">

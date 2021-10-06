@@ -1,0 +1,119 @@
+@import '../../../../config-scss/rem-calc.scss';
+@import '../../../../config-scss/animation.scss';
+@import '../../../../config-scss/reset.scss';
+@import '../../../../config-scss/variables.scss';
+
+:host{
+  .main{
+    margin: 0;
+    width: 100%;
+    padding: ren-calc(10);
+    justify-content: center;
+    align-items: center;
+  }
+  .title{
+    display: flex;
+    flex-direction: row;
+    margin: rem-calc(10) rem-calc(10);
+    align-items: center;
+    padding: rem-calc(10);
+    font-weight: 500;
+    color: rgba(255, 255, 255);
+    font-size: rem-calc(22);
+  }
+  .exit{
+    display: flex;
+    margin: 0 41% 0 rem-calc(10);
+  }
+
+  .announces{
+    display: flex ;
+    align-items: center;
+    justify-content: center;
+    margin-top: rem-calc(50);
+    color: rgba(255, 255, 255);}
+
+    .bookContainer{
+      display:flex;
+      flex-direction: row;
+      width: 85%;
+      min-width: rem-calc(320);
+      background: var(--secondBlack);
+      height: rem-calc(150);
+      padding: rem-calc(15);
+      border-radius: rem-calc(5);
+      margin: rem-calc(10) 0 rem-calc(10) rem-calc(70);}
+
+      .bookImage{
+        display: relative;
+        background-color: var(--grey);
+        width: rem-calc(150);
+        border-radius: rem-calc(5) 0 0 rem-calc(5);
+        height: 120%;
+        margin: rem-calc(-15);
+      }
+
+      .favorite{
+        display: flex;
+        position: relative;
+        left: 86%;
+        width: rem-calc(30);
+        height: rem-calc(30);
+      }
+
+
+      .infos{
+        display: relative;
+        margin: rem-calc(20);
+        margin-left: rem-calc(40);
+        color: rgba(255, 255, 255);
+        font-weight: 300;
+
+
+        .userName{
+          font-size: rem-calc(30);
+          margin-bottom: rem-calc(15);
+          font-weight: 400;
+          margin-left: rem-calc(9);
+        }
+
+        .info{
+          margin: rem-calc(10);
+        }
+      }
+
+  .create{
+    display:flex;
+    position: fixed;
+    flex-direction: row;
+    width: rem-calc(64);
+    margin-left: 90%;
+    top: 85%;
+    background: var(--lightOrange);
+    background-image: url('../../../../assets/icons/create.png') ;
+    background-repeat: no-repeat;
+    background-position: right;
+    border-radius: rem-calc(50);
+    height: rem-calc(64);
+  }
+  .create:hover{
+    transform: translateX(-50px);
+    width: rem-calc(150);
+    transition: 0.5s;
+
+    .btnCreateAnnounce{
+      display: flex;
+    }
+  }
+
+
+  .btnCreateAnnounce{
+    display: none;
+    text-decoration: none;
+    margin: auto rem-calc(70) auto auto;
+    border-radius: rem-calc(50);
+    color: #000;
+    font-weight: bold;
+  }
+
+}

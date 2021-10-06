@@ -1,0 +1,34 @@
+
+<section class=" main slideInDown">
+  <div class="title">
+    <a routerLink="/userProfile" class="exit"><img src="../../../../assets/icons/cancel.png" alt="voltar"></a><h1>Meus anúncios</h1>
+  </div>
+
+  <div class="announces" *ngIf="noAnounces">
+      <h2>Você ainda não possui anúncios</h2>
+  </div>
+
+  <div *ngIf="announceOn">
+<div class="bookContainer " *ngFor="let SubscriberBookAnnouncement of AnnouncementInfo" >
+    <div class="bookImage"></div>
+    <ul class="infos" *ngFor="let Subscriber of subscriber ">
+      <li><h2 class="userName">{{Subscriber.FirstName}} {{Subscriber.Lastname}} - {{Subscriber.SubscriberCity}}</h2></li>
+      <li class="info">Título oferecido: {{SubscriberBookAnnouncement.BookTitle}}</li>
+      <li class="info">Título procurado: {{SubscriberBookAnnouncement.BookTradeTitle}}</li>
+      <li class="info">Urgência:</li>
+    </ul>
+  </div>
+</div>
+
+
+</section>
+
+
+<a routerLink="/createAnnounces" style="text-decoration: none;position: fixed;">
+  <div class="create">
+    <p class="btnCreateAnnounce">Criar</p>
+  </div>
+  </a>
+
+
+

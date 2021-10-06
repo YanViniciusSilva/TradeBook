@@ -15,8 +15,10 @@ export class SubscribersService {
   ) {  }
 
   public getSubscribers() {
-    return this.http.get(`${this.ServerUrl}/Subscribers`);
+    return this.http.get(`${this.ServerUrl}/Subscribers/`);
   }
+
+
 
 
   create(criar: any){

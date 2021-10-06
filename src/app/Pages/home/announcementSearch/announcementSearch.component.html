@@ -11,7 +11,7 @@
   <div class="searchHeader">
     <input type="button" class="btnTrade " style="background-image: url('../../../../assets/icons/tradeIcon.png'); background-repeat: no-repeat; background-position: center;" (click)="TradeOn()" *ngIf="open">
     <input type="button" class="btnTrade " style="background-image: url('../../../../assets/icons/tradeIconReverse.png'); background-repeat: no-repeat; background-position: center;" (click)="TradeOff()" *ngIf="close">
-    <input type="search" class="searchBar" placeholder="O que gostaria de ler...">
+    <input type="search" class="searchBar" #input (keyup)="getsearch(input.value)" (emmitSearch)="getsearch('$event')" placeholder="O que gostaria de ler...">
     <input type="search" class="searchBar2   slideInDown" placeholder="O que está oferecendo?..." *ngIf="trade">
   </div>
 
@@ -20,37 +20,18 @@
     <a type="button" class="order">Ordenar por</a>
   </div>
 
-<div class="searchList">
-<div class="bookContainer ">
+<ng-template class="searchList" ngFor let-BooksAnnouncements [ngForOf]="getAllBooks" >
+<div class="bookContainer " *ngFor="let BooksAnnouncements of getAllBooksInfos">
   <div class="bookImage"></div>
-  <ul class="infos">
+  <ul class="infos" >
     <li><h2 class="userName">Nome do Usuário - UF</h2></li>
-    <li class="info">Título oferecido:</li>
-    <li class="info">Título procurado:</li>
+    <li class="info">Título oferecido: {{BooksAnnouncements.BookTitle}}</li>
+    <li class="info">Título procurado: {{BooksAnnouncements.BookTradeTitle}}</li>
     <li class="info">Urgência:</li>
   </ul>
 </div>
 
-<div class="bookContainer ">
-  <div class="bookImage"></div>
-  <ul class="infos">
-    <li><h2 class="userName">Nome do Usuário - UF</h2></li>
-    <li class="info">Título oferecido:</li>
-    <li class="info">Título procurado:</li>
-    <li class="info">Urgência:</li>
-  </ul>
-</div>
-
-<div class="bookContainer ">
-  <div class="bookImage"></div>
-  <ul class="infos">
-    <li><h2 class="userName">Nome do Usuário - UF</h2></li>
-    <li class="info">Título oferecido:</li>
-    <li class="info">Título procurado:</li>
-    <li class="info">Urgência:</li>
-  </ul>
-</div>
-</div>
+</ng-template>
 </section>
 
 

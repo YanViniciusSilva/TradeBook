@@ -11,6 +11,8 @@ import { FavoritesComponent } from './home/favorites/favorites.component';
 import { RecommendedComponent } from './home/recommended/recommended.component';
 import { UserProfileComponent } from './home/userProfile/userProfile.component';
 import { NavigationMenuComponent } from '../shared/navigationMenu/navigationMenu.component';
+import { MyAnnouncesComponent } from './home/myAnnounces/myAnnounces.component';
+import { CreateAnnouncesComponent } from './home/createAnnounces/createAnnounces.component';
 
 
 
@@ -27,6 +29,8 @@ import { NavigationMenuComponent } from '../shared/navigationMenu/navigationMenu
     RecommendedComponent,
     UserProfileComponent,
     NavigationMenuComponent,
+    MyAnnouncesComponent,
+    CreateAnnouncesComponent
 
 
   ],

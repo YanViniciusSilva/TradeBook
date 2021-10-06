@@ -1,0 +1,23 @@
+<section class=" main slideInDown">
+  <div class="title">
+    <a routerLink="/myAnnounces" class="exit"><img src="../../../../assets/icons/cancel.png" alt="voltar"></a><h1>Criar anúncio</h1>
+  </div>
+
+  <div *ngIf="errorSubmit" class="divError shake">
+    Dados incompletos ou incorretos. Verifique os dados e tente novamente.
+  </div>
+
+  <div class="divForm">
+    <form class="registerAnnounce" novalidate [formGroup]="announceForm" *ngIf="!Submitted">
+      <input type="text" placeholder="Título do livro" formControlName="BookTitle">
+      <input type="text" placeholder="Qual livro quer receber em troca" formControlName="BookTradeTitle">
+      <input type="text" placeholder="Gênero do livro que esta oferecendo" formControlName="BookGenre">
+      <input type="text" placeholder="Descrição do Anúncio" formControlName="AnnouncementDescription">
+      <input type="text" placeholder="Descrição do livro que está oferecendo" formControlName="BookDescription">
+      <p>Estado de conservação</p>
+      <input type="range" placeholder="Estado de conservação">
+      <button type="submit" class="btnCreate" (click)="onSubmit()">Criar</button>
+    </form>
+  </div>
+
+</section>

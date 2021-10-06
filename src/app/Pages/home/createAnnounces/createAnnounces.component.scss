@@ -1,0 +1,84 @@
+@import '../../../../config-scss/rem-calc.scss';
+@import '../../../../config-scss/animation.scss';
+@import '../../../../config-scss/reset.scss';
+@import '../../../../config-scss/variables.scss';
+
+:host{
+  align-items: center;
+  justify-content: center;
+  .title{
+    display: flex;
+    flex-direction: row;
+    margin: rem-calc(10) rem-calc(10);
+    align-items: center;
+    padding: rem-calc(10);
+    font-weight: 500;
+    color: rgba(255, 255, 255);
+    font-size: rem-calc(22);
+  }
+  .exit{
+    display: flex;
+    margin: 0 41% 0 rem-calc(10);
+  }
+
+  .divForm{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .registerAnnounce{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: rem-calc(15);
+    padding: rem-calc(5);
+  }
+
+  input{
+    margin: rem-calc(10);
+    height: rem-calc(30);
+    padding: rem-calc(15);
+    border-radius: rem-calc(5);
+    background: var(--secondBlack);
+    font-weight: 500;
+    color: #fff;
+  }
+
+  p{
+    margin-top: rem-calc(10);
+    text-align:center;
+    color:#fff;
+  }
+
+  .btnCreate{
+    display: flex;
+    margin: auto auto;
+    align-items: center;
+    justify-content: center;
+    width: 98%;
+    height: rem-calc(50);
+    border-radius: rem-calc(5);
+    background: var(--lightOrange);
+    color: #000;
+  }
+  .btnCreate:hover{
+    background:var(--orange) ;
+  }
+
+
+  .divError{
+    display: relative ;
+    margin: auto auto;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    max-width: rem-calc(550);
+    padding: rem-calc(10);
+    background: rgb(252, 117, 117);
+    color: rgb(221, 0, 0);
+    border: solid 1px rgb(221, 0, 0);
+    border-radius: rem-calc(5);
+  }
+
+}
