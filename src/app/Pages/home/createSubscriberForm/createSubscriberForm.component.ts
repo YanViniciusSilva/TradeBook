@@ -8,8 +8,6 @@ import { SubscribersService } from 'src/app/service/subscribers.service';
 
 
 
-
-
 @Injectable ({
   providedIn: CreateSubscriberFormComponent,
 })
@@ -38,21 +36,32 @@ export class CreateSubscriberFormComponent implements OnInit {
   UserCity!: string;
   UserState!: string;
   Complement!: string;
+  photoPreview!: Blob;
+  UserProfilePhoto!:File;
 
+
+  imageUrl !: string;
   constructor(
     private SubscribersService : SubscribersService,
     private fb: FormBuilder,
   ) { }
 
+
+
   ngOnInit() {
-    this.SubscribersService.getSubscribers().subscribe(
-      (data) => {
-        console.log(data);
-      },
-      (error) => {
-        console.log(error);
-      }
-      )
+
+    // this.SubscribersService.getSubscribers().subscribe(
+    //   (data) => {
+    //     console.log(data);
+    //   },
+    //   (error) => {
+    //     console.log(error);
+    //   }
+    //   )
+
+
+
+
 
     this.SubscriberForm = this.fb.group({
       FirstName: [null, [ Validators.required, Validators.minLength(3), Validators.maxLength(255) ]],
@@ -67,7 +76,8 @@ export class CreateSubscriberFormComponent implements OnInit {
       SubscriberDistrict: [null, [ Validators.required, Validators.minLength(3), Validators.maxLength(255) ]],
       SubscriberCity: [null, [ Validators.required, Validators.minLength(3), Validators.maxLength(255) ]],
       UserState: [null, [ Validators.required, Validators.minLength(3), Validators.maxLength(255) ]],
-      Complement: [null, [ Validators.minLength(3), Validators.maxLength(255) ]]
+      Complement: [null, [ Validators.minLength(3), Validators.maxLength(255) ]],
+      UserProfilePhoto: [null, [ Validators.minLength(3), Validators.maxLength(255) ]]
     });
 
     }
@@ -79,9 +89,8 @@ export class CreateSubscriberFormComponent implements OnInit {
     async onSubmit(){
       const auth = getAuth();
       const db = getFirestore();
-          //Add a second document with a generated ID.
-          try {
-            const docRef = await addDoc(collection(db, "users"), {
+      try {
+            const docRef = await addDoc(collection(db, "Users"), {
               email: this.email,
               password : this.password,
               FirstName: this.FirstName,
@@ -94,13 +103,14 @@ export class CreateSubscriberFormComponent implements OnInit {
               UserDistrict: this.UserDistrict,
               UserCity: this.UserCity,
               UserState: this.UserState,
-              Complement: this.Complement
+              Complement: this.Complement,
+              UserProfilePhoto: this.UserProfilePhoto
             });
 
             console.log("Document written with ID: ", docRef.id);
-          } catch (e) {
+      } catch (e) {
             console.error("Error adding document: ", e);
-          }
+      }
 
           createUserWithEmailAndPassword(auth, this.email, this.password)
             .then(async (userCredential) => {
@@ -112,38 +122,52 @@ export class CreateSubscriberFormComponent implements OnInit {
               if(this.SubscriberForm.valid){
                 this.errorSubmit = false;
                 this.Submitted = true;
-                this.SubscribersService.create(this.SubscriberForm.value).subscribe(
-                error => console.log(error),
-                success => console.log('success'),
-                );
+
+                // this.SubscribersService.create(this.SubscriberForm.value).subscribe(
+                // error => console.log(error),
+                // success => console.log('success'),
+                // );
 
 
 
                 // ...
+              // }})
               }})
               .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
+                console.log(errorCode);
+                console.log(errorMessage);
                 this.Submitted = false;
                 this.errorSubmit = true;
                 // ..
               });
 
+    }
 
-
-
-
+    fileSelected(){
+      console.log(this);
     }
 
 
 
+    onImageSelected(event:any) {
 
+      this.photoPreview = event.target.files[0];
+      let reader = new FileReader();
 
-
-
-
-
+      reader.onload = (e: any) => {
+        this.imageUrl = e.target.result;
+      };
+      reader.readAsDataURL(this.photoPreview);
+    }
   }
+
+
+
+
+
+
 
 
 

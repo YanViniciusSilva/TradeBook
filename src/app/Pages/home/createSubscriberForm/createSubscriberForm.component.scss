@@ -14,8 +14,8 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-      margin: auto auto;
-      margin-top: 2vh;
+      margin: auto auto ;
+      margin-top: 0.5vw;
 
 
       //transform: translateX(100%) translateY(20%) ;
@@ -47,6 +47,46 @@
 
         max-width: rem-calc(1000);
         //align-items: center;
+
+        .imgModal{
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          margin-top: rem-calc(20);
+        }
+        .Image{
+
+          border: solid 1px var(--lightOrange);
+          border-radius: rem-calc(5);
+          width: rem-calc(170);
+          height: rem-calc(170);
+          background-image: url('../../../../assets/icons/camera.png');
+          background-repeat: no-repeat;
+          background-position: center;
+          margin-bottom: rem-calc(15);
+          margin-top: rem-calc(15);
+        }
+
+        .btnFile{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: rem-calc(50);
+          width: rem-calc(200);
+          background: var(--secondBlack);
+          border: solid 2px var(--orange);
+          border-radius: rem-calc(50);
+          color:#fff;
+          font-weight: 700;
+          margin-left: rem-calc(45);
+        }
+        .btnFile:hover{
+          font-weight: 700;
+          transition: all 0.5s;
+          color: #000;
+          background-image: linear-gradient( to right, var(--lightOrange), var(--orange), rgb(255, 123, 0));
+        }
 
         .titulos{
           color: rgba(255,255,255);

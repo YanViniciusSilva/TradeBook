@@ -1,6 +1,5 @@
+
 <section class="CreateFormMain slideInRight">
-
-
   <img class="logo fadeIn" src="../../../../assets/trocaLivro.png" alt="troca_livro">
 
   <section Class="createLoginForm">
@@ -16,6 +15,26 @@
 
     <form class="LoginForm" novalidate [formGroup]="SubscriberForm" *ngIf="!Submitted">
       <div class="div1">
+        <div class="imgModal">
+          <h2 class="titulos">Imagem de perfil</h2>
+          <img src="{{imageUrl}}"  alt="" class="Image" >
+        </div>
+        <label for="btn" class="btnFile"> Selecionar imagem</label>
+        <input
+          id="btn"
+          style="display: none;"
+          name="UserPhoto"
+          type="file"
+          formControlName="UserProfilePhoto"
+          [(ngModel)]="UserProfilePhoto"
+          (change)="onImageSelected($event)"
+          required
+        >
+
+      </div>
+
+      <div class="div2">
+
         <h2 class="titulos">Dados pessoais</h2>
         <input
           class="FormPlace"
@@ -51,9 +70,6 @@
           formControlName="SubscriberNumber"
           [(ngModel)]="UserPhone"
           required>
-      </div>
-
-      <div class="div2">
         <h2 class="titulos">Email e Senha</h2>
         <input
           class="FormPlace"
@@ -71,7 +87,12 @@
           formControlName="SubscriberPassword"
           [(ngModel)]="password"
           required>
-      </div>
+
+    </div>
+
+
+
+
 
       <div class="div3">
         <h2 class="titulos">Endereço</h2>
@@ -132,14 +153,17 @@
       </div>
 
       <div class="footerForm">
-      <p>Todos os campos com * são obrigatórios</p>
-      <button class="btnCreateAcount" type="submit" (click)= onSubmit() >Criar conta ></button>
-      <a class="return" href="http://localhost:4200" >  Voltar </a>
+        <p>Todos os campos com * são obrigatórios</p>
+        <button class="btnCreateAcount" type="submit" (click)= onSubmit() >Criar conta ></button>
+        <a class="return" href="http://localhost:4200">  Voltar </a>
       </div>
 
 
 
     </form>
+
+
+
   </section>
 
 </section>
