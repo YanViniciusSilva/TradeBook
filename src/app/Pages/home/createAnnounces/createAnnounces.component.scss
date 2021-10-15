@@ -23,9 +23,74 @@
 
   .divForm{
     display: flex;
+    flex-direction: column;
+    //background-color: #000;
     align-items: center;
     justify-content: center;
+    padding: rem-calc(10);
   }
+
+  .UploadPrincipalImage{
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    //width: rem-calc(620);
+    height: rem-calc(400);
+    background: var(--secondBlack);
+    border-radius: rem-calc(20);
+    margin: rem-calc(10);
+    background-image:url("../../../../assets/icons/book.png") ;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: all 0.5s;
+  }
+  .UploadPrincipalImage:hover{
+    transform: scale(0.9);
+    background-image: url("../../../../assets/icons/book.png"), linear-gradient(to right, var(--lightOrange), orange ,var(--orange), rgb(255, 115, 0));
+    transition: all 0.5s;
+  }
+
+  .UploadSecondaryImage{
+    display: inline-flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    width: 23.3%;
+    height: rem-calc(105);
+    background: var(--secondBlack);
+    border-radius: rem-calc(20);
+    margin: rem-calc(5);
+    background-image:url("../../../../assets/icons/plusWhite.png") ;
+    background-repeat: no-repeat;
+    background-position: center ;
+    background-size: rem-calc(50) contain;
+    transition: all 0.5s;
+  }
+  .UploadSecondaryImage:hover{
+    transform: scale(0.8);
+    background-image: url("../../../../assets/icons/plusWhite.png"), linear-gradient(to right, var(--lightOrange), orange ,var(--orange), rgb(255, 115, 0));
+    transition: all 0.5s;
+  }
+  .img{
+    position: relative;
+    height: rem-calc(400);
+    align-items: center;
+    justify-content: center;
+    border-radius: rem-calc(20);
+
+  }
+  .imgSec{
+    position: absolute;
+    width: rem-calc(142);
+    height: rem-calc(100);
+    align-items: center;
+    border-radius: rem-calc(20);
+    margin: rem-calc(-10);
+
+  }
+
+
 
   .registerAnnounce{
     display: flex;
@@ -35,7 +100,7 @@
     padding: rem-calc(5);
   }
 
-  input{
+  .FormPlace{
     margin: rem-calc(10);
     height: rem-calc(30);
     padding: rem-calc(15);
@@ -45,35 +110,50 @@
     color: #fff;
   }
 
+  .conditionsOptions{
+    margin: rem-calc(10);
+    height: rem-calc(50);
+    padding: rem-calc(5);
+    border-radius: rem-calc(5);
+    background: var(--secondBlack);
+    color: #fff;
+  }
+  .conditionsList{
+    padding: rem-calc(5);
+  }
+
   p{
-    margin-top: rem-calc(10);
+    margin-top: rem-calc(25);
+    margin-bottom: rem-calc(15);
     text-align:center;
     color:#fff;
   }
 
   .btnCreate{
     display: flex;
-    margin: auto auto;
+    margin: rem-calc(25) auto auto auto;
     align-items: center;
     justify-content: center;
     width: 98%;
     height: rem-calc(50);
     border-radius: rem-calc(5);
     background: var(--lightOrange);
+    background-image:linear-gradient(to right, var(--lightOrange),var(--orange));
+    font-weight: 700;
     color: #000;
   }
   .btnCreate:hover{
-    background:var(--orange) ;
+    background:darkorange ;
   }
 
 
   .divError{
     display: relative ;
-    margin: auto auto;
+    margin: rem-calc(10);
     justify-content: center;
     align-items: center;
     text-align: center;
-    max-width: rem-calc(550);
+    max-width: rem-calc(750);
     padding: rem-calc(10);
     background: rgb(252, 117, 117);
     color: rgb(221, 0, 0);

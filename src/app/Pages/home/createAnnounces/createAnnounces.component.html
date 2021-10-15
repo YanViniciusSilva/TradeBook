@@ -3,21 +3,64 @@
     <a routerLink="/myAnnounces" class="exit"><img src="../../../../assets/icons/cancel.png" alt="voltar"></a><h1>Criar anúncio</h1>
   </div>
 
-  <div *ngIf="errorSubmit" class="divError shake">
-    Dados incompletos ou incorretos. Verifique os dados e tente novamente.
-  </div>
+
 
   <div class="divForm">
+
     <form class="registerAnnounce" novalidate [formGroup]="announceForm" *ngIf="!Submitted">
-      <input type="text" placeholder="Título do livro" formControlName="BookTitle">
-      <input type="text" placeholder="Qual livro quer receber em troca" formControlName="BookTradeTitle">
-      <input type="text" placeholder="Gênero do livro que esta oferecendo" formControlName="BookGenre">
-      <input type="text" placeholder="Descrição do Anúncio" formControlName="AnnouncementDescription">
-      <input type="text" placeholder="Descrição do livro que está oferecendo" formControlName="BookDescription">
-      <p>Estado de conservação</p>
-      <input type="range" placeholder="Estado de conservação">
+    <p>Imagens do anúncio</p>
+    <div >
+      <label for="upload" class="UploadPrincipalImage" ><img src={{imageUrl}} alt="book" class="img" *ngIf="srcSelected"></label>
+      <input type="file"  style="display: none;" id="upload" (change)="onImageSelected($event)" formControlName="BookImage" [(ngModel)]="BookImage">
+
+      <label for="2upload" class="UploadSecondaryImage"><img src={{imageUrl2}} alt="book" class="imgSec" *ngIf="srcSelected2"></label>
+      <input type="file" style="display: none;" id="2upload" (change)="onImage2Selected($event)" formControlName="BookImage2" [(ngModel)]="BookImage2">
+      <label for="3upload" class="UploadSecondaryImage"><img src={{imageUrl3}} alt="book" class="imgSec" *ngIf="srcSelected3"></label>
+      <input type="file" style="display: none;" id="3upload" (change)="onImage3Selected($event)" formControlName="BookImage3" [(ngModel)]="BookImage3">
+      <label for="4upload" class="UploadSecondaryImage"><img src={{imageUrl4}} alt="book" class="imgSec" *ngIf="srcSelected4"></label>
+      <input type="file" style="display: none;" id="4upload" (change)="onImage4Selected($event)" formControlName="BookImage4" [(ngModel)]="BookImage4">
+      <label for="5upload" class="UploadSecondaryImage"><img src={{imageUrl5}} alt="book" class="imgSec" *ngIf="srcSelected5"></label>
+      <input type="file" style="display: none;" id="5upload" (change)="onImage5Selected($event)" formControlName="BookImage5" [(ngModel)]="BookImage5">
+    </div>
+
+      <p>Informações do anúncio</p>
+      <input class="FormPlace" type="text" placeholder="Título do livro" formControlName="BookTitle" [(ngModel)]="BookTitle">
+      <input class="FormPlace" type="text" placeholder="Qual livro quer receber em troca" formControlName="BookTradeTitle" [(ngModel)]="BookTradeTitle">
+      <input class="FormPlace" type="text" placeholder="Gênero do livro que esta oferecendo" formControlName="BookGenre" [(ngModel)]="BookGenre">
+      <input class="FormPlace" type="hidden" placeholder="Descrição do Anúncio" >
+      <textarea class="FormPlace" style="max-width: 92.4%; min-width: 92.4%;height: 110px;" placeholder="Descrição do Anúncio"  formControlName="AnnouncementDescription" [(ngModel)]="AnnouncementDescription"></textarea>
+      <input class="FormPlace" type="hidden" placeholder="Descrição do livro que está oferecendo"  >
+      <textarea class="FormPlace" style="max-width: 92.4%; min-width: 92.4%;height: 110px;" placeholder="Descrição do livro que está oferecendo" formControlName="BookDescription" [(ngModel)]="BookDescription"></textarea>
+
+      <p>Estado de concervação do seu livro:</p>
+      <select class="conditionsOptions" formControlName="OfferBookConditions" [(ngModel)]="OfferBookConditions">
+        <option class="conditionsList">Conservado</option>
+        <option class="conditionsList">Super conservado!</option>
+        <option class="conditionsList">Bem conservado</option>
+        <option class="conditionsList">Mal conservado</option>
+        <option class="conditionsList">Antiguidade</option>
+        <option class="conditionsList">Relíquia</option>
+      </select>
+
+      <p>Nível de urgência da sua troca:</p>
+      <select class="conditionsOptions" formControlName="UrgencyLevel" [(ngModel)]="UrgencyLevel">
+        <option class="conditionsList">tô tranquilo</option>
+        <option class="conditionsList">Urgente!</option>
+        <option class="conditionsList">tô com pressa mas não estou desesperado</option>
+        <option class="conditionsList">"zero" pressa</option>
+      </select>
+
+
+      <div *ngIf="errorSubmit" class="divError shake">
+        Dados incompletos ou incorretos. Verifique os dados e tente novamente.
+      </div>
+
       <button type="submit" class="btnCreate" (click)="onSubmit()">Criar</button>
     </form>
   </div>
+
+
+
+
 
 </section>
