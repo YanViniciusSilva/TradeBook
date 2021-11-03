@@ -2,7 +2,7 @@ import { Component, OnInit, Injectable} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AnnouncesService } from '../../../service/Announces.service';
 import { addDoc, collection, getFirestore } from "firebase/firestore";
-import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
+import { HttpClient } from '@angular/common/http';
 
 
 
@@ -37,6 +37,7 @@ export class CreateAnnouncesComponent implements OnInit {
 
   constructor(
     private AnnouncesService: AnnouncesService,
+    private http: HttpClient,
     private fb: FormBuilder
   ) { }
 
@@ -173,7 +174,8 @@ export class CreateAnnouncesComponent implements OnInit {
     if(this.announceForm.valid){
       this.errorSubmit = false;
       this.Submitted = true;
-      window.location.href="http://localhost:4200/myAnnounces";
+
+
       const db = getFirestore();
 
       try {
@@ -193,10 +195,14 @@ export class CreateAnnouncesComponent implements OnInit {
         console.error("Error adding document: ", e);
       }
 
-      // this.AnnouncesService.create(this.announceForm.value).subscribe(
-      //   error => console.log(error),
-      //   success => console.log('success'),
-      // );
+      this.AnnouncesService.create(this.announceForm.value).subscribe(
+        error => console.log(error),
+        success => console.log('success'),
+      );
+
+      window.setTimeout (() => {
+        window.location.href="http://localhost:4200/myAnnounces";
+      }, 1000);
 
   }else{
     console.log("error");

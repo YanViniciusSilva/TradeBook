@@ -13,10 +13,11 @@
   //   justify-content: center;
   //   width: 80%;
   // }
+
   .userProfile{
     display: flex;
 
-    margin: rem-calc(10) rem-calc(10) 0 rem-calc(100);
+    margin: rem-calc(20) rem-calc(10) 0 5%;
     padding: rem-calc(20);
     height: rem-calc(180);
     width: 88%;
@@ -60,7 +61,7 @@
     display: flex;
     max-width: 91%;
     flex-direction: column;
-    margin: rem-calc(10) rem-calc(10) 0 rem-calc(100);
+    margin: rem-calc(10) rem-calc(10) 0 5%;
 
   }
 

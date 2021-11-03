@@ -1,34 +1,23 @@
 import { Component, OnInit } from '@angular/core';
-import { AnnouncesService } from '../../../service/Announces.service';
+import { AnnouncesService } from 'src/app/service/Announces.service';
 import { SubscribersService } from 'src/app/service/subscribers.service';
-import { collection, doc, getDoc, getDocs, getFirestore } from 'firebase/firestore';
-
-
 
 @Component({
-  selector: 'myAnnounces',
-  templateUrl: './myAnnounces.component.html',
-  styleUrls: ['./myAnnounces.component.scss']
+  selector: 'myAnnouncesInfos',
+  templateUrl: './my-announces-infos.component.html',
+  styleUrls: ['./my-announces-infos.component.scss']
 })
-export class MyAnnouncesComponent implements OnInit {
+export class MyAnnouncesInfosComponent implements OnInit {
 
-  AnnouncementInfo: any;
   subscriber: any;
-  noAnounces = true;
-  announceOn = false;
-  BookTitle!: string;
-  RecievedBookTitle!: string;
-  Urgency!: string;
-  auth!: string;
-  info!: any;
+  AnnouncementInfo: any;
 
   constructor(
     private AnnouncesService: AnnouncesService,
     private SubscribersService: SubscribersService
-    ) { }
+  ){}
 
-  async ngOnInit() {
-
+  ngOnInit(): void {
 
     this.SubscribersService.getSubscribers().subscribe(
       (res) => {
@@ -52,15 +41,6 @@ export class MyAnnouncesComponent implements OnInit {
         console.log(error);
       }
     );
-
-    if(this.AnnouncesService.getAnnounces() != null){
-      this.noAnounces = false;
-      this.announceOn = true;
-    }
-
-
   }
-
-
 
 }

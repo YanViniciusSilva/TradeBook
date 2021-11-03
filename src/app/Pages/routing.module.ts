@@ -10,6 +10,7 @@ import { FavoritesComponent } from './home/favorites/favorites.component';
 import { AnnouncementSearchComponent } from './home/announcementSearch/announcementSearch.component';
 import { MyAnnouncesComponent } from './home/myAnnounces/myAnnounces.component';
 import { CreateAnnouncesComponent } from './home/createAnnounces/createAnnounces.component';
+import { MyAnnouncesInfosComponent } from './home/my-announces-infos/my-announces-infos.component';
 
 
 
@@ -37,6 +38,10 @@ const routes: Routes = [
   {
     path: 'myAnnounces',
     component: MyAnnouncesComponent
+  },
+  {
+    path: 'myAnnouncesInfos',
+    component: MyAnnouncesInfosComponent
   },
   {
     path: 'createAnnounces',

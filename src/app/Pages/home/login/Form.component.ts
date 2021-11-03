@@ -22,12 +22,12 @@ const app = initializeApp(firebaseConfig);
 
 const auth = getAuth();
 
+
 @Component({
   selector: 'Form',
   templateUrl: './Form.component.html',
   styleUrls: ['./Form.component.scss']
 })
-
 
 
 
@@ -39,6 +39,8 @@ export class FormComponent implements OnInit {
   email!: string;
   password!: string;
   popUpError = false;
+  UserId!: object;
+
 
 
   constructor(
@@ -65,6 +67,8 @@ export class FormComponent implements OnInit {
     });
   }
 
+
+
   verify(){
     console.log("verify...")
     console.log(this.login.value);
@@ -74,7 +78,9 @@ export class FormComponent implements OnInit {
     .then((userCredential) => {
       // Signed in
       const user = userCredential.user;
-      window.location.href = "http://localhost:4200/recommended"
+      this.UserId = user;
+      console.log(this.UserId);
+      window.location.href = "http://localhost:4200/recommended";
       // ...
     })
     .catch((error) => {

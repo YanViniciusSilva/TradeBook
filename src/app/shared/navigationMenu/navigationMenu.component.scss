@@ -15,41 +15,60 @@
     display: none;
   }
 
+  .logo{
+    display: absolute;
+    margin-left: rem-calc(-250) ;
+    margin-right: rem-calc(70);
+    max-width: rem-calc(170);
+  }
+
   .menuList{
     display:flex;
-    position:fixed;
-    margin: rem-calc(-10) rem-calc(10) 0 0 ;
+    position:relative;
+    margin: rem-calc(0) 0 rem-calc(5) 0 ;
     align-items: center;
     justify-content: center;
-    left: 0;
-    flex-direction: column;
-    max-width: rem-calc(110);
-    height: 110%;
+    flex-direction: row;
+    width: 100%;
+    height: rem-calc(60);
     background: var(--lightOrange);
     z-index: 10;
-
-
     }
 
     .menuItens{
       display: flex;
-      max-width: rem-calc(32);
+      flex-direction: row;
+      width: rem-calc(110);
+      height: rem-calc(40);
       padding: rem-calc(10);
-      margin-bottom: rem-calc(50);
+      margin: rem-calc(20);
       background: var(--lightOrange);
-      border-radius: rem-calc(50);
-
+      align-items: center;
+      justify-content: center;
   }
   .menuItens:hover{
     background: var(--orange);
-
-
+    transition: all 0.4s;
 
   }
 
   .icon{
     max-width: rem-calc(32);
   }
+
+  a{
+    text-decoration: none;
+  }
+
+  p{
+    display: inline;
+    flex-direction: row;
+    text-decoration: none;
+    text-align: center;
+    color: #000;
+    font-weight: 600;
+  }
+
 
 @media (max-width: 900px){
 

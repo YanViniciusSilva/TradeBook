@@ -1,0 +1,62 @@
+
+
+<section class="main slideInDown">
+
+  <div class="title">
+    <a routerLink="/myAnnounces" class="exit"><img src="../../../../assets/icons/cancel.png" alt="voltar"></a><h1>Detalhes</h1>
+  </div>
+
+<div class="ImageBookModal">
+  <img src="" alt="Book" class="image">  <img src="" alt="Book" class="image2">
+</div><br>
+
+
+<div class="BookDescription slideInDown" *ngFor="let SubscriberBookAnnouncement of AnnouncementInfo">
+  <ul class="OfferBookConditions" *ngFor="let Subscriber of subscriber ">
+    <li>Titulo: {{SubscriberBookAnnouncement.BookTitle}}</li>
+    <li>Genêro: {{SubscriberBookAnnouncement.BookGenre}}</li>
+    <li>Descrição do Livro: {{SubscriberBookAnnouncement.BookDescription}}</li>
+    <li>Descrição do Anúncio: {{SubscriberBookAnnouncement.AnnouncementDescription}}</li>
+    <li>Concervação do livro: {{SubscriberBookAnnouncement.OfferBookConditions}}</li>
+    <li>Nivel de Urgêcia: {{SubscriberBookAnnouncement.UrgencyLevel}}</li>
+  </ul>
+
+  <ul class="TradeBookConditions">
+    <li>Titulo:</li>
+    <li>Concervação do livro:</li>
+  </ul>
+
+</div>
+
+<div class="map">
+  <h2>Local da troca:</h2><br>
+  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14617.898122261044!2d-46.48739015!3d-23.65898235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spt-BR!2sbr!4v1635870790591!5m2!1spt-BR!2sbr" width="1020" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+</div>
+
+<div class="Recomendações">
+  <h2>Trocas similares</h2>
+  <div class="previas" >
+    <img src="" alt="" class="previaImg">
+  </div>
+  <div class="previas">
+    <img src="" alt="" class="previaImg">
+  </div>
+  <div class="previas">
+    <img src="" alt="" class="previaImg">
+  </div>
+  <div class="previas">
+    <img src="" alt="" class="previaImg">
+  </div>
+  <div class="previas">
+    <img src="" alt="" class="previaImg">
+  </div>
+</div>
+
+<div class="btn SlideInTop">
+  <a routerLink="" style="text-decoration: none;">Quero Trocar!</a>
+</div>
+
+
+</section>
+
+

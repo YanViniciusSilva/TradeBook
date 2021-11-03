@@ -9,15 +9,18 @@
   </div>
 
   <div *ngIf="announceOn">
-<div class="bookContainer " *ngFor="let SubscriberBookAnnouncement of AnnouncementInfo" >
-    <div class="bookImage"></div>
-    <ul class="infos" *ngFor="let Subscriber of subscriber ">
-      <li><h2 class="userName">{{Subscriber.FirstName}} {{Subscriber.Lastname}} - {{Subscriber.SubscriberCity}}</h2></li>
-      <li class="info">Título oferecido: {{SubscriberBookAnnouncement.BookTitle}}</li>
-      <li class="info">Título procurado: {{SubscriberBookAnnouncement.BookTradeTitle}}</li>
-      <li class="info">Urgência:</li>
-    </ul>
-  </div>
+
+  <a routerLink="/myAnnouncesInfos" style="text-decoration: none;">
+    <div class="bookContainer " *ngFor="let SubscriberBookAnnouncement of AnnouncementInfo" >
+        <div class="bookImage"></div>
+        <ul class="infos" *ngFor="let Subscriber of subscriber ">
+          <li><h2 class="userName">{{Subscriber.FirstName}} {{Subscriber.Lastname}} - {{Subscriber.SubscriberCity}}</h2></li>
+          <li class="info">Título oferecido: {{SubscriberBookAnnouncement.BookTitle}}</li>
+          <li class="info">Título procurado: {{SubscriberBookAnnouncement.BookTradeTitle}}</li>
+          <li class="info">Urgência:</li>
+        </ul>
+      </div>
+  </a>
 </div>
 
 

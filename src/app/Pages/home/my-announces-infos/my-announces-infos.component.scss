@@ -1,0 +1,158 @@
+@import '../../../../config-scss/rem-calc.scss';
+@import '../../../../config-scss/animation.scss';
+@import '../../../../config-scss/reset.scss';
+@import '../../../../config-scss/variables.scss';
+
+:host{
+
+  .main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .title{
+    display: inline-flex;
+    justify-content: space-between;
+    margin: rem-calc(10) rem-calc(10);
+    align-items: center;
+    padding: rem-calc(10);
+    font-weight: 500;
+    color: rgba(255, 255, 255);
+    font-size: rem-calc(22);
+  }
+  .exit{
+    display: inline-flex;
+    margin: 0 0 0 -480%;
+  }
+
+  .ImageBookModal{
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 5%;
+    align-items: center;
+  }
+
+  .image{
+    width: rem-calc(513);
+    height: rem-calc(300);
+    background: var(--secondBlack);
+    margin: 0 rem-calc(5) rem-calc(-62) 0;
+    background-image: url(../../../../assets/icons/camera.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 10px 10px 0px 0px;
+    }
+
+  .image2{
+    width: rem-calc(513);
+    height: rem-calc(300);
+    background: var(--secondBlack);
+    margin: 0 0 rem-calc(-62) rem-calc(5);
+    background-image: url(../../../../assets/icons/camera.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 10px 10px 0px 0px;
+  }
+
+
+  .BookDescription{
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: rem-calc(40);
+    width: 80%;
+    //background: var(--secondBlack);
+  }
+
+  .OfferBookConditions{
+    padding: rem-calc(40);
+    background: var(--secondBlack);
+    line-height: rem-calc(50);
+    color: #fff;
+    width: rem-calc(550);
+    margin: rem-calc(5);
+    border-radius: 0px 0px 10px 10px;
+
+  }
+
+  .TradeBookConditions{
+    padding: rem-calc(40);
+    background: var(--secondBlack);
+    line-height: rem-calc(50);
+    color: #fff;
+    width: rem-calc(550);
+    margin: rem-calc(5);
+    border-radius: 0px 0px 10px 10px;
+  }
+
+  a{
+    color: #000;
+    font-weight: 600;
+  }
+
+  .btn{
+    display: flex;
+    position:fixed baseline;
+    margin: rem-calc(20) 10px 10px 10px;
+    width: 80%;
+    height: rem-calc(15);
+    border-radius: rem-calc(100);
+    background-image: linear-gradient(to right, var(--lightOrange), orange ,var(--orange), rgb(255, 115, 0));
+    text-align: center;
+    justify-content: center;
+    padding: rem-calc(20);
+  }
+
+  h2{
+    color: #fff;
+    text-align: center;
+    font-weight: 600;
+    font-size: medium;
+  }
+
+  .map{
+    background: var(--secondBlack);
+    padding: rem-calc(10);
+    border-radius: 10px;
+  }
+
+  .Recomendações{
+    background: var(--secondBlack);
+    margin: rem-calc(10);
+    width: 78%;
+    height: rem-calc(300);
+    border-radius: 10px;
+    padding: rem-calc(10);
+
+  }
+
+  .previas{
+    display: inline-flex;
+    flex-direction: row;
+    background: var(--secondBlack);
+    width: 18.9%;
+    height: rem-calc(265);
+    margin: rem-calc(15) rem-calc(5) rem-calc(15) rem-calc(5);
+    border-radius: 10px;
+    background-image: url("../../../../assets/icons/camera.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    transition:ease-in-out 0.5s;
+  }
+
+  .previas:hover{
+    transition: ease-in 0.5s;
+    background-size: rem-calc(50);
+    border: solid 1px #fff;
+    background-color: rgba(000,000,000, 0.4);
+
+
+  }
+
+
+
+
+}

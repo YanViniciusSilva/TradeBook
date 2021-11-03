@@ -13,6 +13,7 @@ import { UserProfileComponent } from './home/userProfile/userProfile.component';
 import { NavigationMenuComponent } from '../shared/navigationMenu/navigationMenu.component';
 import { MyAnnouncesComponent } from './home/myAnnounces/myAnnounces.component';
 import { CreateAnnouncesComponent } from './home/createAnnounces/createAnnounces.component';
+import { MyAnnouncesInfosComponent } from './home/my-announces-infos/my-announces-infos.component';
 
 
 
@@ -30,7 +31,8 @@ import { CreateAnnouncesComponent } from './home/createAnnounces/createAnnounces
     UserProfileComponent,
     NavigationMenuComponent,
     MyAnnouncesComponent,
-    CreateAnnouncesComponent
+    CreateAnnouncesComponent,
+    MyAnnouncesInfosComponent
 
 
   ],
